@@ -632,11 +632,11 @@ public class CodeGenVisitor implements ASTVisitor {
         StringBuilder exprStr = (StringBuilder) unaryExprPostfix.getExpr().visit(this, new StringBuilder(""));
 
         //
-        if (unaryExprPostfix.getCoerceTo() != unaryExprPostfix.getType()) {
-            res.add("(");
-            res.add(unaryExprPostfix.getCoerceTo().toString());
-            res.add(")");
-        }
+//        if (unaryExprPostfix.getCoerceTo() != unaryExprPostfix.getType()) {
+//            res.add("(");
+//            res.add(unaryExprPostfix.getCoerceTo().toString());
+//            res.add(")");
+//        }
 
 
         res.add(exprStr + ".getRGB(");
