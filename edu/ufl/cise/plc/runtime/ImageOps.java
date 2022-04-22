@@ -39,7 +39,7 @@ public class ImageOps {
 	public static int getPackedColor(BufferedImage image, int x, int y) {
 		return image.getRGB(x,y);
 	}
-	
+
 	/**
 	 * returns the pixel at the x,y location in the given image in ColorTuple form.
 	 * @param image
@@ -328,6 +328,7 @@ public class ImageOps {
 	 * @param maxY
 	 * @return new image that is a resized version of the 'before' image
 	 */
+
 	public static BufferedImage resize(BufferedImage image, int maxX,
 			int maxY) {
 		int w = image.getWidth();

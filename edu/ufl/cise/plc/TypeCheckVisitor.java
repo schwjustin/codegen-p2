@@ -374,10 +374,19 @@ public class TypeCheckVisitor implements ASTVisitor {
 						"an image without a dimension must have an initializer expression");
 				declaration.getExpr().visit(this, arg);
 				Type exprType = declaration.getExpr().getType();
-				check(exprType == IMAGE, declaration,
-						"type of expression and declared type do not match");
+
+				if (declaration.getOp().getKind() == Kind.LARROW) {
+					check(readAssignmentCompatible(exprType), declaration,
+							"type of expression and declared type do not match");
+				} else {
+					check(exprType == IMAGE, declaration,
+							"type of expression and declared type do not match");
+				}
+
 			}
-		} else if (declaration.getOp() != null) { // has initializer expression
+		}
+
+		if (declaration.getOp() != null) { // has initializer expression
 			Kind opKind = declaration.getOp().getKind();
 			declaration.getExpr().visit(this, arg);
 			Type exprType = declaration.getExpr().getType();
