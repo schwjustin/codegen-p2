@@ -14,7 +14,6 @@ public class WriteStatement extends Statement {
 		this.dest = dest;
 	}
 
-
 	public Expr getSource() {
 		return source;
 	}
