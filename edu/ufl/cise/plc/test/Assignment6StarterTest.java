@@ -774,7 +774,6 @@ List of tests that must give exceptions
 	}
 
 
-
 	@Test
 	void testExtractRed() throws Exception {
 		String input = """
